@@ -1,0 +1,4 @@
+#ignore emacs previous file version garbage
+*~
+.eunit
+ebin/*.beam
