@@ -1,10 +1,13 @@
-# The Repository of the Zürich Erlang User Group helt in 2012
+# The Repository of the Zürich Erlang User Group for the year 2012
 
 
 Meetups
 ---
 - [02-erlang-vs-clojure](https://github.com/zurich-erlang-user-group/2012-meetups/tree/master/02-erlang-vs-clojure) (06.06.2012) A demo of solutions done in Erlang and Clojure
 
+Past meetups
+---
+- [01-Kickoff](https://github.com/zurich-erlang-user-group/2012-meetups/tree/master/01-kickoff-meetup)
     
 Contributors
 ---
