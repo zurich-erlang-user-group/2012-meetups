@@ -17,6 +17,8 @@ who to contact if you would like more details on the subject.
 
 * Building web applications with Erlang (muharem)
 
+* [Elixir](http://elixir-lang.org/) - a modern approach to Erlang (christoph)
+
 * How to release/deploy an app with rebar (lars)
 
 * Yecc and Leex - writing a simple lexer and grammar parser in Erlang
