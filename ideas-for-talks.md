@@ -34,7 +34,10 @@ who to contact if you would like more details on the subject.
   (lars)
 
 * do parallel implementations in Erlang and some other language (for
-  instance Clojure) (thomas)
+  instance Clojure) (thomas). Muharem already has done similar work
+  here:
+    https://github.com/freizeit/exercises/tree/master/cj-a-store-credit
+  He can do a talk on these experiments once the clojure code is ready.
 
 
 ## Ideas that were already given as talks/demos/events:
