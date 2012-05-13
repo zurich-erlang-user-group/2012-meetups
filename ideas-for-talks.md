@@ -35,5 +35,5 @@ who to contact if you would like more details on the subject.
 
 ## Ideas that were already given as talks/demos/events:
 
-
+* none yet
 
