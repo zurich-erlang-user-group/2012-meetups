@@ -15,6 +15,8 @@ who to contact if you would like more details on the subject.
 * Hackathon: do bugfixing for eJabberd (muharem) 
   (Lars: or maybe some other project...)
 
+* Building web applications with Erlang (muharem)
+
 * How to release/deploy an app with rebar (lars)
 
 * Yecc and Leex - writing a simple lexer and grammar parser in Erlang
