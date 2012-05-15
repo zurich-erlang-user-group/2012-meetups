@@ -18,5 +18,5 @@ the month. Therefore the next meetup is scheduled for the 6th of June.
 Thomas and Lars announced they will do a talk at the next meetup
 comparing solutions implemented in Clojure and Erlang.
 
-
-
+Also Agustin will present briefly about how erlang will be used to replace the current
+backend of the location-based mobile game Gbanga.
