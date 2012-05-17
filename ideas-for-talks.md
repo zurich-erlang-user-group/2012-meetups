@@ -9,8 +9,9 @@ who to contact if you would like more details on the subject.
   we don't have any talks planned - then we can always meet and
   work/hack/share what we did on our common project. (stefan)
 
-  Stefan suggested a database browser that would work across many types of databases
-  (stefan - correct me (or this text on github) if this is wrong)
+  Stefan suggested a database browser that would work across many
+  types of databases (stefan - correct me (or this text on github) if
+  this is wrong)
 
 * Hackathon: do bugfixing for eJabberd (muharem) 
   (Lars: or maybe some other project...)
@@ -39,6 +40,11 @@ who to contact if you would like more details on the subject.
     https://github.com/freizeit/exercises/tree/master/cj-a-store-credit
   He can do a talk on these experiments once the clojure code is ready.
 
+* Have a thorough look and demo of Dialyzer (static analysis tool)
+
+* Have a look at [QuickCheck](http://www.quviq.com/index.html) or
+  [Triq](https://github.com/krestenkrab/triq) - an open source version
+  of QuickCheck.
 
 ## Ideas that were already given as talks/demos/events:
 
