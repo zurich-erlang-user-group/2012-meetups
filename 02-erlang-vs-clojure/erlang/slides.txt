@@ -1,0 +1,70 @@
+# TODOs
+
+1. function / basic stuff
+
+see ./erlang/functions.erl
+
+2. Erlang can sort all sorts of items
+
+(emacs@stella)49> lists:sort([1, [1,2,4], atomar, -2, {hej}, [1, 2, 2], 6, {heap}, {hea}, a]).
+[-2,1,6,a,atomar,{hea},{heap},{hej},[1,2,2],[1,2,4]]
+
+3. type system
+
+4. producer-consumer
+
+
+
+5. lazy-eval (Erlang har strict eval)
+
+6. telegram-parsning (fx, tcp pakker)
+
+
+7. Pattern matching
+
+8. datastrukturer - trae/graf/... 
+
+Erlang: 
+atoms, 
+simple types,
+tupler (records),
+lister
+dict - hashtable get: O(1), insert O(N).
+ets
+dets
+mnesia
+gb_trees - balanced tree with ordered keys
+process dictionary
+
+9. tco - tail recursion
+ - default behaviour - beware of doing it right - try/catch
+
+10. macros in erlang
+
+11. list comprehensions
+
+12. infite lists
+
+13. many_processes
+
+17> 
+17> timer:tc(fun many_processes:max/1, [100]).    
+Maximum allowed processes: 10000000
+Process spawn time = 0.0 (0.0) microseconds
+{558,ok}
+18> timer:tc(fun many_processes:max/1, [1000]).
+Maximum allowed processes: 10000000
+Process spawn time = 0.0 (4.0) microseconds
+{5062,ok}
+19> timer:tc(fun many_processes:max/1, [10000]).
+Maximum allowed processes: 10000000
+Process spawn time = 4.0 (5.1) microseconds
+{50741,ok}
+20> timer:tc(fun many_processes:max/1, [100000]).
+Maximum allowed processes: 10000000
+Process spawn time = 7.7 (6.7) microseconds
+{663350,ok}
+21> timer:tc(fun many_processes:max/1, [1000000]).
+Maximum allowed processes: 10000000
+Process spawn time = 7.62 (7.031) microseconds
+{6960810,ok}
