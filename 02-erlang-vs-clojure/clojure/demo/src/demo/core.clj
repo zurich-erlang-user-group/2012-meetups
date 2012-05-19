@@ -1,5 +1,6 @@
 (ns demo.core
-  (:use [clojure.core.match :only [match]]))
+  (:use [clojure.core.match :only [match]])
+  (:use clojure.core.match.bits))
 
 ;; Pattern matching
 
@@ -55,4 +56,21 @@
 #_(send food-agent change-food-stuff :meat)
 #_(send food-agent change-food-stuff :banana)
 
-;; Telegram parsning
+;; Telegram parsing
+
+;;;; Following found in clojure.core.match.bits but is not working. A ticket (MATCH-59) has been opened
+
+  (comment match [dgram]
+    [([(ip-version 4)
+       ((hlen 4) :when [#(>= % 5) #(<= (* 4 %) drgramsize)])
+       (srvc-type 8)
+       (totlen 16)
+       (id 16)
+       (flgs 3)
+       (fragoff 13)
+       (ttl 8)
+       (proto 8)
+       (hdrchksum 16)
+       (srcip 32)
+       (destip 32)
+       & restdgram] ::bits)])
