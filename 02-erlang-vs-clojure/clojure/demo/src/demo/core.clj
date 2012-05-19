@@ -38,3 +38,21 @@
       {[_ deep-value] :foo} m]
   deep-value)
 
+;; Producers and consumers - push solution
+(def food-agent (agent nil))
+
+(defn consumer [key ref old new]
+  (println
+   (case new
+	 :meat "Yummy that tasted good"
+	 "I do not want to consume that")))
+
+(add-watch food-agent "a key representing the watch" consumer)
+
+(defn change-food-stuff [current-food new-food]
+  new-food)
+
+#_(send food-agent change-food-stuff :meat)
+#_(send food-agent change-food-stuff :banana)
+
+;; Telegram parsning
