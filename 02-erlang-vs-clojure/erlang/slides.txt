@@ -17,8 +17,31 @@ see ./erlang/functions.erl
 
 5. lazy-eval (Erlang har strict eval)
 
-6. telegram-parsning (fx, tcp pakker)
+6. datagram-parsing (fx, tcp pakker)
 
+
+183da2599ab4e0469a4e78f8080045000049716700006c11963bdd805f1a0a000067b6366296003555e16d5202bded2cda9e7a0912b1338fb701f6eb1e3df55559a0e45dd05065535348368848249417a7c15431958c25
+
+183da2599ab4e0469a4e78f8080045000049716700006c11963bdd805f1a0a000067b6366296003555e16d5202bded2cda9e7a0912b1338fb701f6eb1e3df55559a0e45dd05065535348368848249417a7c15431958c25
+
+-define(IP_VERSION, 4).
+-define(IP_MIN_HDR_LEN, 5).
+
+DgramSize = byte_size(Dgram),
+case Dgram of 
+    <<?IP_VERSION:4, HLen:4, SrvcType:8, TotLen:16, 
+      ID:16, Flgs:3, FragOff:13,
+      TTL:8, Proto:8, HdrChkSum:16,
+      SrcIP:32,
+      DestIP:32, RestDgram/binary>> when HLen>=5, 4*HLen=<DgramSize ->
+        OptsLen = 4*(HLen - ?IP_MIN_HDR_LEN),
+        <<Opts:OptsLen/binary,Data/binary>> = RestDgram,
+    ...
+end.
+
+    <<4:4, HLen:4, SrvcType:8, TotLen:16,  ID:16, Flgs:3, FragOff:13, TTL:8, Proto:8, HdrChkSum:16, SrcIP:32, DestIP:32, RestDgram/binary>>
+
+<<4:4, HLen:4, SrvcType:8, TotLen:16,  ID:16, Flgs:3, FragOff:13, TTL:8, Proto:8, HdrChkSum:16, SrcIP:32, DestIP:32, RestDgram/binary>> = list_to_binary(convert_hex_string:hexstr_to_bin("4500001f000040004011f3cc0a000067dd805f1a6296b636000ba981")).
 
 7. Pattern matching
 
@@ -29,6 +52,7 @@ atoms,
 simple types,
 tupler (records),
 lister
+queue - O(1) insertion and amortized O(1) 
 dict - hashtable get: O(1), insert O(N).
 ets
 dets
