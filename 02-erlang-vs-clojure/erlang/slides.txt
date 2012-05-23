@@ -61,11 +61,22 @@ gb_trees - balanced tree with ordered keys
 process dictionary
 
 9. tco - tail recursion
- - default behaviour - beware of doing it right - try/catch
+
+If you write your recursivce functions correct and watch out of a few
+things, 
+
 
 10. macros in erlang
 
 11. list comprehensions
+
+example;
+1> [ X * 2 || X <- lists:seq(1,10) ].
+[2,4,6,8,10,12,14,16,18,20]
+
+product: 
+1> [ {X, Y} || X <- lists:seq(1,3), Y <- lists:seq(1,3) ].
+[{1,1},{1,2},{1,3},{2,1},{2,2},{2,3},{3,1},{3,2},{3,3}]
 
 12. infite lists
 
@@ -92,3 +103,5 @@ Process spawn time = 7.7 (6.7) microseconds
 Maximum allowed processes: 10000000
 Process spawn time = 7.62 (7.031) microseconds
 {6960810,ok}
+
+14. higher order functions. See higher_order_funs.erl

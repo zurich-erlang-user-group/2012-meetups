@@ -35,6 +35,8 @@ for now we are thinking of covering or talking about the following:
 
 14. more stuff?
 
+15. An example of a higher order functions
+
 ### Description of presentation 2
 
 Agustin will present briefly about how erlang will be used to replace
