@@ -11,9 +11,24 @@ see ./erlang/functions.erl
 
 3. type system
 
+Ouch - Erlang is a dynamic language, and as such does not have types
+(or rather it is a uni-type language - everything has the same type.)
+
+The compiler does NO type checks.
+
+There is a language extension that helps:
+* Static analysis /w Dialyzer
+* For documentation (EDoc)
+
+Example:
+-spec foo({X, integer()}) -> X when X :: atom()
+       ; ([Y]) -> Y when Y :: number().
+
+src: http://www.erlang.org/doc/reference_manual/typespec.html
+
 4. producer-consumer
 
-
+see src.
 
 5. lazy-eval (Erlang har strict eval)
 
@@ -62,7 +77,7 @@ process dictionary
 
 9. tco - tail recursion
 
-If you write your recursivce functions correct and watch out of a few
+If you write your recursive functions correct and watch out of a few
 things, 
 
 
