@@ -33,9 +33,7 @@ for now we are thinking of covering or talking about the following:
 
 13. many processes
 
-14. more stuff?
-
-15. An example of a higher order functions
+14. An example of a higher order functions
 
 ### Description of presentation 2
 
