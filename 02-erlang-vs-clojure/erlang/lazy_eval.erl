@@ -14,7 +14,7 @@ range(F, Num) ->
 take(NumItems, Range) ->
     generate(Range, NumItems, []).
 
-generate(_Fun, 0, Acc) -> lists:reverse(Acc);
-generate(Fun, ToGo, Acc)  ->
-    [Val|Func] = Fun(),
-    generate(Func, ToGo - 1, [Val | Acc]).
+generate(Range, 0, Acc) -> {Range, lists:reverse(Acc)};
+generate(Range, ToGo, Acc)  ->
+    [Val|Next] = Range(),
+    generate(Next, ToGo - 1, [Val | Acc]).
