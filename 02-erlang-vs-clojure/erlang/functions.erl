@@ -19,8 +19,8 @@ numbers_case(X) ->
 deconstruction([_,[_,{_,What}]]) ->
 	What. 
 
-%% (emacs@stella)11> functions:deconstruction([{1, banan}, [liste, {1, tupel}]]).
-%% tupel
+(emacs@stella)11> functions:deconstruction([{1, banan}, [liste, {1, tupel}]]).
+tupel
 
 	
 

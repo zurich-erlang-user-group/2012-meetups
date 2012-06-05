@@ -9,6 +9,9 @@ see ./erlang/functions.erl
 (emacs@stella)49> lists:sort([1, [1,2,4], atomar, -2, {hej}, [1, 2, 2], 6, {heap}, {hea}, a]).
 [-2,1,6,a,atomar,{hea},{heap},{hej},[1,2,2],[1,2,4]]
 
+Notes: what does this mean? Firstly, if you know the order of everything, you can use 
+all the build in functions that rely on order, do sorting etc. 
+
 3. type system
 
 Ouch - Erlang is a dynamic language, and as such does not have types
@@ -26,9 +29,13 @@ Example:
 
 src: http://www.erlang.org/doc/reference_manual/typespec.html
 
+Notes: this is a really ugly and disputed side of Erlang. 
+
 4. producer-consumer
 
 see src.
+
+Notes: this is a normal beginner example in Java. 
 
 5. lazy-eval (Erlang har strict eval)
 
@@ -57,6 +64,15 @@ end.
     <<4:4, HLen:4, SrvcType:8, TotLen:16,  ID:16, Flgs:3, FragOff:13, TTL:8, Proto:8, HdrChkSum:16, SrcIP:32, DestIP:32, RestDgram/binary>>
 
 <<4:4, HLen:4, SrvcType:8, TotLen:16,  ID:16, Flgs:3, FragOff:13, TTL:8, Proto:8, HdrChkSum:16, SrcIP:32, DestIP:32, RestDgram/binary>> = list_to_binary(convert_hex_string:hexstr_to_bin("4500001f000040004011f3cc0a000067dd805f1a6296b636000ba981")).
+
+hexstr_to_bin(L) ->
+    hexstr_to_bin(L, []).
+
+hexstr_to_bin([], Acc) ->
+    lists:reverse(Acc);
+hexstr_to_bin([X, Y| T], Acc) ->
+  {ok, [V], []} = io_lib:fread("~16u", [X,Y]),
+  hexstr_to_bin(T, [V | Acc]).
 
 7. Pattern matching
 
@@ -118,5 +134,5 @@ Process spawn time = 7.7 (6.7) microseconds
 Maximum allowed processes: 10000000
 Process spawn time = 7.62 (7.031) microseconds
 {6960810,ok}
-
+ 
 14. higher order functions. See higher_order_funs.erl
