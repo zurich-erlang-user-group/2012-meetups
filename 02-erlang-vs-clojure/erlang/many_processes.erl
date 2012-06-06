@@ -11,13 +11,8 @@ max(N) ->
     io:format("Maximum allowed processes: ~p~n", [Max]),
     statistics(runtime),
     statistics(wall_clock),
-    L = for(1, N, fun()->
-			  spawn(fun() ->
-					wait()
-				end)
-		  end),
-    lists:foreach(fun(Pid) ->
-			  Pid ! die end, L),
+    L = [spawn(fun wait/0) || _ <- lists:seq(1, N)],
+    [Pid ! die || Pid <- L],
     {_, Time1} = statistics(runtime),
     {_, Time2} = statistics(wall_clock),
     U1 = Time1 * 1000 / N,
@@ -29,8 +24,3 @@ wait() ->
 	die ->
 	    void
     end.
-
-for(N, N, F) ->
-    [F()];
-for(I, N, F) ->
-    [F() | for(I+1, N, F)].
